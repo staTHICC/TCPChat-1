@@ -1,0 +1,8 @@
+C:\Users\kiko1\source\repos\TCPChat\TCPChat_Server\bin\Debug\TCPChat_Server.exe.config
+C:\Users\kiko1\source\repos\TCPChat\TCPChat_Server\bin\Debug\TCPChat_Server.exe
+C:\Users\kiko1\source\repos\TCPChat\TCPChat_Server\bin\Debug\TCPChat_Server.pdb
+C:\Users\kiko1\source\repos\TCPChat\TCPChat_Server\obj\Debug\TCPChat_Server.csproj.AssemblyReference.cache
+C:\Users\kiko1\source\repos\TCPChat\TCPChat_Server\obj\Debug\TCPChat_Server.csproj.SuggestedBindingRedirects.cache
+C:\Users\kiko1\source\repos\TCPChat\TCPChat_Server\obj\Debug\TCPChat_Server.csproj.CoreCompileInputs.cache
+C:\Users\kiko1\source\repos\TCPChat\TCPChat_Server\obj\Debug\TCPChat_Server.exe
+C:\Users\kiko1\source\repos\TCPChat\TCPChat_Server\obj\Debug\TCPChat_Server.pdb
