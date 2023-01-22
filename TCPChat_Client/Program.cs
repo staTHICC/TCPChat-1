@@ -1,9 +1,12 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Security.AccessControl;
 using System.Text; //для кодирования
 using System.Threading;
+using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace TCPChat_Client
 {
@@ -51,7 +54,7 @@ namespace TCPChat_Client
             Thread recieveThread = new Thread(RecieveMessageForTask);
             Thread sendThread = new Thread(SendMessageForTask);
             recieveThread.Start(user);
-            sendThread.Start(user);
+            sendThread.Start(user); 
         }
 
         private static void SendMessageForTask(Object objUser)
@@ -62,7 +65,40 @@ namespace TCPChat_Client
             {
                 Console.Write($"[{user.Name}]: ");
                 string message = Console.ReadLine();
-                SendMessage(user.Socket, message);
+                
+                if (message == "platypus")
+                {
+                    Platypus platypus = new Platypus()
+                    {
+                        Color = "CoolBrown",
+                        Size = 2
+                    };
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(Platypus));
+                    MemoryStream stream = new MemoryStream(); //cache
+                    xmlSerializer.Serialize(stream, platypus);
+                    stream.Position = 0;
+                    //Platypus platypus2 = xmlSerializer.Deserialize(stream) as Platypus;
+                    byte[] bytes = stream.ToArray();
+                    user.Socket.Send(bytes);
+                    //SendMessage(user.Socket, message);
+                }
+                if (message == "dumpling")
+                {
+                    Dumpling dumpling = new Dumpling()
+                    {
+                        IsFried = true,
+                        Name = "Стрелка",
+                        Description = "вареник"
+                    };
+
+                    string text = JsonConvert.SerializeObject(dumpling);
+
+                    SendMessage(user.Socket, text);
+                }
+                else
+                {
+                    SendMessage(user.Socket, message);
+                }
             }
         }
 

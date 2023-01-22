@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.Xml.Serialization;
+using Newtonsoft.Json;  
 
 namespace TCPChat_Server
 {
@@ -24,7 +28,7 @@ namespace TCPChat_Server
 
             socket.Bind(endRemotePoint); //binding socket to endpoint
 
-            socket.Listen(1); //слушаем на наличие клиентов
+            socket.Listen(2); //слушаем на наличие клиентов
 
             Console.WriteLine("Ожидаем звонка от клиента");
 
@@ -63,10 +67,42 @@ namespace TCPChat_Server
 
             while (true)
             {
-                string message = RecieveMessage(user.Socket);
-                Console.WriteLine($"[{user.Name}]: {message}");
-                SendMessageToClients($"[{user.Name}]: {message}", user.Socket);
+                //string message = RecieveMessage(user.Socket);
+                //Console.WriteLine($"[{user.Name}]: {message}");
+                byte[] bytes = new byte[1024];
+                int num_bytes = user.Socket.Receive(bytes);
+                ProcessCommandXML(bytes, user, num_bytes);
+                //SendMessageToClients($"[{user.Name}]: {message}", user.Socket);
             }
+        }
+
+        private static void ProcessCommandCoding(string text, User user)
+        {
+            // health, level, money
+            // 10, 4, 5
+
+            int health, level, money;
+
+            string[] numsText = text.Split(',');
+
+            health = int.Parse(numsText[0]);
+            level = int.Parse(numsText[1]);
+            money = int.Parse(numsText[2]);
+
+            Console.WriteLine($"Health: {health}, Level: {level}, Money: {money}");
+        }
+
+        private static void ProcessCommandJson(Socket socket, string text)
+        {
+            Dumpling dumpling = JsonConvert.DeserializeObject<Dumpling>(text);
+        }
+
+        private static void ProcessCommandXML(byte[] bytes, User user, int num_bytes)
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Platypus));
+            MemoryStream stream = new MemoryStream(bytes, 0, num_bytes);
+            stream.Position = 0;
+            Platypus platypus = xmlSerializer.Deserialize(stream) as Platypus;
         }
 
         private static void SendMessageForManager(Object objUser)

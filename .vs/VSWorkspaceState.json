@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TcpChat_Client",
+    "\\TcpChat_Server"
   ],
-  "SelectedNode": "\\TCPChat.sln",
+  "SelectedNode": "\\TcpChat_Server\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

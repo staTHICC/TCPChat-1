@@ -6,3 +6,13 @@ C:\Users\kiko1\source\repos\TCPChat\TCPChat_Server\obj\Debug\TCPChat_Server.cspr
 C:\Users\kiko1\source\repos\TCPChat\TCPChat_Server\obj\Debug\TCPChat_Server.csproj.CoreCompileInputs.cache
 C:\Users\kiko1\source\repos\TCPChat\TCPChat_Server\obj\Debug\TCPChat_Server.exe
 C:\Users\kiko1\source\repos\TCPChat\TCPChat_Server\obj\Debug\TCPChat_Server.pdb
+C:\Users\Admin\source\repos\TcpChat\TCPChat_Server\bin\Debug\TCPChat_Server.exe.config
+C:\Users\Admin\source\repos\TcpChat\TCPChat_Server\bin\Debug\TCPChat_Server.exe
+C:\Users\Admin\source\repos\TcpChat\TCPChat_Server\bin\Debug\TCPChat_Server.pdb
+C:\Users\Admin\source\repos\TcpChat\TCPChat_Server\obj\Debug\TCPChat_Server.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\TcpChat\TCPChat_Server\obj\Debug\TCPChat_Server.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\TcpChat\TCPChat_Server\obj\Debug\TCPChat_Server.exe
+C:\Users\Admin\source\repos\TcpChat\TCPChat_Server\obj\Debug\TCPChat_Server.pdb
+C:\Users\Admin\source\repos\TcpChat\TCPChat_Server\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\TcpChat\TCPChat_Server\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\source\repos\TcpChat\TCPChat_Server\obj\Debug\TCPChat_Server.csproj.CopyComplete
